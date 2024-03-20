@@ -1,0 +1,6 @@
+scikit-learn
+streamlit
+matplotlib-inline
+numpy
+pandas
+pickle
