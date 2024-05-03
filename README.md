@@ -18,6 +18,7 @@ The dataset used in this web app contains the following features:
 9. Number of Pregnancies
 
 These features play a crucial role in predicting the likelihood of an individual having diabetes, and the web app utilizes them to provide accurate predictions.The dataset is publicly available on kaggle https://www.kaggle.com/datasets/mrsimple07/diabetes-prediction
+Here's the link to the web app https://diabetes-web-app-007.streamlit.app/
 
 ## Usage
 
