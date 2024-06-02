@@ -2,7 +2,7 @@
 # Diabetes Web App using Streamlit
 
 This repository contains a web application for diabetes prediction using Streamlit, a popular Python library for creating web apps with minimal effort. The app leverages a dataset with various features related to diabetes to provide predictions and insights.
-Here is the link to the web app https://diabetes-web-app-007.streamlit.app/
+
 
 ## Dataset Features
 
