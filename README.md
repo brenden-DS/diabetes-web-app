@@ -10,123 +10,94 @@ Source: Diabetes Prediction Dataset on Kaggle
 Size: 768 rows, 9 columns  
 
 Features:  
-Age: Age of the individual (years)  
+-Age: Age of the individual (years)  
 
-Gender: Gender of the individual (binary)  
+-Gender: Gender of the individual (binary)  
 
-Body Mass Index (BMI): Measure of body fat based on height and weight  
+-Body Mass Index (BMI): Measure of body fat based on height and weight  
 
-Blood Pressure: Diastolic blood pressure (mmHg)  
+-Blood Pressure: Diastolic blood pressure (mmHg)  
 
-Insulin Level: 2-hour serum insulin (mu U/ml)  
+-Insulin Level: 2-hour serum insulin (mu U/ml)  
 
-Skin Thickness: Triceps skin fold thickness (mm)  
+-Skin Thickness: Triceps skin fold thickness (mm)  
 
-Glucose Level: Plasma glucose concentration (mg/dl)  
+-Glucose Level: Plasma glucose concentration (mg/dl)  
 
-Diabetes Pedigree Function: Genetic diabetes risk score  
+-Diabetes Pedigree Function: Genetic diabetes risk score  
 
-Number of Pregnancies: Number of times pregnant
+-Number of Pregnancies: Number of times pregnant
 
-Target: Outcome (0 = No Diabetes, 1 = Diabetes)  
+-Target: Outcome (0 = No Diabetes, 1 = Diabetes)  
 
 Purpose: These features capture physiological and genetic factors critical for predicting diabetes likelihood.
 
 ### Workflow:
 ### Exploratory Data Analysis (EDA):  
-Inspected data structure, distributions, and class balance using pandas, seaborn, and matplotlib.  
+-Inspected data structure, distributions, and class balance using pandas, seaborn, and matplotlib.  
 
 ### Key findings: 
-Glucose and BMI show significant variance; dataset is imbalanced (more non-diabetic cases).
+-Glucose and BMI show significant variance; dataset is imbalanced (more non-diabetic cases).
 
 ### Preprocessing:  
-Standardized column names (str.lower()).  
+-Standardized column names (str.lower()).  
 
-Scaled features with RobustScaler to handle outliers.  
+-Scaled features with RobustScaler to handle outliers.  
 
-Split data into 70% training and 30% testing sets (train_test_split).
+-Split data into 70% training and 30% testing sets (train_test_split).
 
 ### Modeling:  
 Tested five classifiers from sklearn:  
-Random Forest (n_estimators=200, max_depth=5)  
+-Random Forest (n_estimators=200, max_depth=5)  
 
-K-Nearest Neighbors (n_neighbors=7)  
+-K-Nearest Neighbors (n_neighbors=7)  
 
-Support Vector Machine (SVM)  
+-Support Vector Machine (SVM)  
 
-Logistic Regression (max_iter=200)  
+-Logistic Regression (max_iter=200)  
 
-Gradient Boosting (n_estimators=50, max_depth=5)
+-Gradient Boosting (n_estimators=50, max_depth=5)
 
-Evaluated with accuracy, precision, recall, and F1-score due to class imbalance.
+-Evaluated with accuracy, precision, recall, and F1-score due to class imbalance.
 
 ### Visualization:  
-Distribution plots for numerical features.  
+-Distribution plots for numerical features.  
 
-Count plot for outcome balance.  
+-Count plot for outcome balance.  
 
-Bar chart comparing model performance with accuracy labels.
+-Bar chart comparing model performance with accuracy labels.
 
 ### Model Deployment:  
-Saved the best-performing model (Random Forest) using pickle for integration into the web app.
+-Saved the best-performing model (Random Forest) using pickle for integration into the web app.
 
 ### Web App:  
-Built an interactive Streamlit application to allow users to input health data and receive diabetes risk predictions.  
+-Built an interactive Streamlit application to allow users to input health data and receive diabetes risk predictions.  
 
-Live Demo: Diabetes Web App
+### Live Demo: 
+Diabetes Web App
 
 ### Key Insights:
-Feature Importance: Random Forest identified Glucose Level and BMI as top predictors of diabetes risk.  
+Feature Importance:
+- Random Forest identified Glucose Level and BMI as top predictors of diabetes risk.  
 
-Model Performance: Random Forest achieved ~75% accuracy, with balanced precision/recall (F1 ~0.70), outperforming others due to its robustness to imbalanced data.  
+### Model Performance:
+- Random Forest achieved ~75% accuracy, with balanced precision/recall (F1 ~0.70), outperforming others due to its robustness to imbalanced data.  
 
-EDA Highlights: Higher glucose levels and BMI correlate strongly with positive diabetes outcomes (correlation heatmap analysis).
+### EDA Highlights: 
+-Higher glucose levels and BMI correlate strongly with positive diabetes outcomes (correlation heatmap analysis).
 
 ### Web App Features:
-Input Fields: Users enter values for all 9 features (e.g., Age, BMI, Glucose Level).  
+-Input Fields: Users enter values for all 9 features (e.g., Age, BMI, Glucose Level).  
 
-Prediction: Displays diabetes risk (Yes/No) based on the Random Forest model.  
+### Prediction:
+- Displays diabetes risk (Yes/No) based on the Random Forest model.  
 
-Accessibility: Hosted on Streamlit Cloud for easy access—no local setup required.
+### Accessibility: 
+-Hosted on Streamlit Cloud for easy access—no local setup required.
 
-Getting Started
-To run this project locally:  
-Clone the Repository:  
-bash
+### Results
+-Best Model: Random Forest (Accuracy: ~75%, F1: ~0.70).  
 
-git clone [your-repo-url]
-cd diabetes-prediction
-
-Install Dependencies:  
-bash
-
-pip install pandas numpy seaborn matplotlib scikit-learn streamlit
-
-Run the Analysis:  
-Open diabetes_prediction.ipynb in Jupyter Notebook and execute all cells.  
-
-Dataset: Download from Kaggle and place as diabetes.csv in the root folder.
-
-Launch the Web App:  
-bash
-
-streamlit run app.py
-
-Requires diabetes_model.pkl and app.py (Streamlit script) in the repo.
-
-Files
-diabetes_prediction.ipynb: Jupyter notebook with EDA, modeling, and visualization.  
-
-diabetes_model.pkl: Pickled Random Forest model.  
-
-app.py: Streamlit web app script.  
-
-README.md: This file.
-
-Results
-Best Model: Random Forest (Accuracy: ~75%, F1: ~0.70).  
-
-Visualization: Bar plot shows RF leading, with KNN and GB close behind (~70-72%).  
 
 Impact: The web app enables non-technical users (e.g., healthcare providers) to assess diabetes risk instantly.
 
