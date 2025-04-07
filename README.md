@@ -74,7 +74,9 @@ Tested five classifiers from sklearn:
 -Built an interactive Streamlit application to allow users to input health data and receive diabetes risk predictions.  
 
 ### Live Demo: 
-Diabetes Web App
+[Diabetes Web App](https://diabetes-web-app-007.streamlit.app/)
+
+
 
 ### Key Insights:
 Feature Importance:
